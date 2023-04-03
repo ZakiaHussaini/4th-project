@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %} {{ item.name }}{% endblock title %}
+
+{% block content %}
+
+<section  id="pro-detail" class=" bg-black-color">
+    <div class="row">
+            <div class="single-pro-image m-4">
+                <img src="{{ item.image.url }}" alt="product image" width="100%" id="MainImg" class="img-fluid mb-1">
+                <div class="small-img-group">
+                    <div class="small-img-col">
+                        <img src="{{ item.image.url }}" class="small-img img-fluid" width="100%" alt="">
+                    </div>
+                    <div class="small-img-col">
+                        <img src="{{ item.rear_image.url }}" class="small-img img-fluid" width="100%" alt="">
+                    </div>
+                    
+            </div> 
+        </div>
+       
+            <div class="single-pro-details ">
+                <h4 class=" text-warning mt-5 mb-3">{{item.name }}</h4>
+               <h6 class="orange-color d-inline">Price:</h6>  <h6 class="gray-color mb-2  d-inline"> ${{ item.price }}</h6>
+               <br>
+               <h6 class="orange-color d-inline">Seller:</h6>  <h6 class="gray-color mb-4  d-inline"> {{ item.created_by }}</h6>
+
+                  <h5 class="orange-color mt-4">Product Deatails</h5>
+                  {% if item.description %}
+                  <span class="gray-color">{{ item.description}}</span>
+                  {% endif %}
+                  {% if request.user == item.created_by %} 
+                   <a href="{% url 'item:delete' item.id %}" class="btn btn-outline-danger mx-2 my-1 d-inline-block   ">Delete</a>
+                   <a href="{% url 'item:delete' item.id %}" class="btn btn-outline-success px-4 mx-1 my-1 d-inline-block   ">Edit</a>
+
+                  {% else %}
+                  <button class="btn btn-custom-color my-4 d-block">Contact Seller</button>
+                  {% endif %}
+                </div>
+                <div class="row">
+                  <h2 class="item-heading orange-color pb-1">Related Products</h2>
+                  <hr class="orange-color pb-4">
+              </div>
+            <div class="row">
+              {% for item in related_items %}
+  
+                  <div class="col-md-4 col-sm-6 col-lg-3 mb-3">
+                      <div class="product-box">
+                          <div class="product-inner-box position-relative">
+                              <a href="{% url 'item:detail' item.id %}">
+                                  <div class="product-img">
+                                      <div class="product-img-slider">
+                                          <img src="{{ item.image.url }}" alt="dress" class="img-fluid">
+                                          <img src="{{ item.rear_image.url }}" alt="dress" class="img-fluid">
+          
+                                      </div>
+                                  </div>
+                                  <div class="product-info">
+                                      <div class="product-name mx-auto">
+                                          <h3>{{ item.name }}</h3>
+                                      </div>
+                                      <div class="product-price">
+                                          <span>$ {{ item.price }}</span>
+                                      </div>
+                                  </div>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  {% endfor %}
+              </div>
+            
+            
+  </section>
+
+  
+
+
+
+<script>
+
+  var MainImg = document.getElementById("MainImg");
+  var smallimg = document.getElementsByClassName("small-img");
+
+  smallimg[0].onclick = function(){
+    MainImg.src = smallimg[0].src;
+  }
+
+  smallimg[1].onclick = function(){
+    MainImg.src = smallimg[1].src;
+  }
+
+  smallimg[2].onclick = function() {
+    MainImg.src = smallimg[2].src;
+  }
+
+  smallimg[3].onclick = function() {
+    MainImg[3].src = smallimg[3].src;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+{% endblock content %}
+    

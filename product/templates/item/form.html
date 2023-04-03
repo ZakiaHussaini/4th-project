@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+
+{% block title %}{{ title }} {% endblock title %}
+
+
+{% block content %}
+<div class="fluid-container mt-0 bg-black-color">
+    <div class="form-content py-3">
+        <form action="." method="post" class="cus-form" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h3 class="p-4 text-center">{{ title }}</h3>
+            <select name='category' class="form-select mb-3" aria-label="Default select example">
+                <option selected>Category:</option>
+                <option value="1">Women Clothes</option>
+                <option value="2">Men Clothes</option>
+                <option value="3">Child Clothes</option>
+              </select>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name:</label>
+                <input type="text" name='name' class="form-control" id="name" >
+              </div>
+             
+              <div class="mb-3">
+                <label for="description" class="form-label">Descriptions:</label>
+                <textarea name='description' class="form-control" id="description" rows="3"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price:</label>
+                <input name='price' type="text" class="form-control" id="price" >
+              </div>
+
+              <div class="input-group">
+                <label for="price" class="form-label d-block">Image</label>
+                <input name='image' type="file" class="form-control " id="image"  aria-label="image">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="is_sold" id="is_sold">
+                <label class="form-check-label" for="is_sold">
+                  Is solod
+                </label>
+              </div>
+              {% if form.errors or form.non_field_errors %}
+              <div class="form-control mb-2">
+                {% for field in form %}
+                {{ field.errors }}
+                {% endfor %}
+              </div>
+            {% endif %}
+
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-center text-white btn-custom-color w-50  " >Submit</button>
+              </div>
+
+        </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+{% endblock content %}
+    

@@ -1,7 +1,7 @@
 # QueenStore - Introduction
 QueenStore is an online marketplace where users can buy online or sell online any afghan women handicrafts.This website able Users to add their own products for sale on and buy a product by contact and communicate to seller.
 
-![Am I Responsive](/documentation/am-i-responsive.png) 
+![Am I Responsive](readme-img/responive.png) 
 
 
 The Live Site can be found [here](https://queen-store.herokuapp.com/).
@@ -230,10 +230,6 @@ All CSS files ran through CSS jigsaw validator with some bootstrap errors that c
 ![html](readme-img/css%20.png)
 
 
-### Lighthouse Testing
-Below you can see the results of Googles Lighthouse Testing.
-
-![Lighthouse Testing](./docs/lighthouse-testing.png)
 
 
 ## Manual Testing

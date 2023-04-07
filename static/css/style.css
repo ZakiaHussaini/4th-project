@@ -517,7 +517,7 @@ footer li i, p, hr {
   }
   
 
-/* @media screen and (max-width: 780px) {
+@media screen and (max-width: 780px) {
 
   .home-text h6 {
     display: none;
@@ -525,9 +525,12 @@ footer li i, p, hr {
   
   .home {
     overflow-x: hidden;
-    display: inline-block;
   }
-} */
+
+  .home-img {
+    width: 60%;
+  }
+}
 /* 
 @media screen and (max-width: 490px) {
   .home-img {

@@ -457,11 +457,7 @@ footer li i, p, hr {
   
   
 /* media  */
-@media screen and (max-width: 992px) {
-  .spliter {
-    display: none;
-  }
-  }
+
 
   @media (max-width: 991px) {
     .side-title {

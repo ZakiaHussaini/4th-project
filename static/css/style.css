@@ -106,7 +106,7 @@
 }
 /* home section */
 .home {
-  min-height: 740px;
+  height: 90vh;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
@@ -526,5 +526,13 @@ footer li i, p, hr {
   .home {
     overflow-x: hidden;
     display: inline-block;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .home-img {
+    width: 60%;
+    overflow-x: hidden;
+    margin: 0 auto;
   }
 }

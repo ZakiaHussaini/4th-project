@@ -77,9 +77,7 @@
   z-index: 999;
 }
 
-.spliter {
-  margin-top: 3px;
-}
+
 
 .navbar .navbar-brand a{
   padding: 1rem 0;
@@ -108,7 +106,6 @@
 }
 /* home section */
 .home {
-  width: 100%;
   min-height: 740px;
   display: grid;
   align-items: center;
@@ -153,7 +150,6 @@
 .product-inner-box img {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  object-fit:cover;
   overflow-x: hidden;
 
 }
@@ -519,3 +515,13 @@ footer li i, p, hr {
   }
   
 
+@media screen and (max-width: 780px) {
+
+  .home-text h6 {
+    display: none;
+  }
+  
+  .home {
+    overflow-x: hidden;
+  }
+}

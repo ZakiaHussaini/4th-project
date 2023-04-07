@@ -105,13 +105,13 @@
 
 }
 /* home section */
-.home {
+/* .home {
   height: 90vh;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
   gap: 1.5rem;
-}
+} */
 
 .home h1 {
   font-weight: 600;
@@ -534,5 +534,15 @@ footer li i, p, hr {
     width: 60%;
     overflow-x: hidden;
     margin: 0 auto;
+  }
+}
+
+@media screen and (min-width: 790) {
+  .home {
+    height:fit-content;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
+    gap: 1.5rem;
   }
 }

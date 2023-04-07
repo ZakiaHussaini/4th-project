@@ -8,18 +8,22 @@
 
     <!-- home section -->
     <section class="home bg-black-color px-5" id="home">
-        <div class="home-text ">
-            <h3 class="text-warning pt-3">Online Marketplace</h3>
-            <h1 class="gray-color py-1"> <span class="orange-color">Buy </span> Online, <br><span class="orange-color"> Sell  </span> Online Afghan women's handicraft!</h1>
-            <h6 class="lead gray-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel cum doloremque natus veritatis corporis itaque necessitatibus ipsam!  </h6>
-            <a href="{% url 'item:items' %}" class="btn btn-outline-warning btn-custom-color m-1 px-3">Shop Now</a>
+       <div class="row">
+        <div class="col-sm-12">
+            <div class="home-text ">
+                <h3 class="text-warning pt-3">Online Marketplace</h3>
+                <h1 class="gray-color py-1"> <span class="orange-color">Buy </span> Online, <br><span class="orange-color"> Sell  </span> Online Afghan women's handicraft!</h1>
+                <h6 class="lead gray-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel cum doloremque natus veritatis corporis itaque necessitatibus ipsam!  </h6>
+                <a href="{% url 'item:items' %}" class="btn btn-outline-warning btn-custom-color m-1 px-3">Shop Now</a>
+            </div>
+            <div class="home-img">
+                <img src="https://res.cloudinary.com/dd5s8l3yh/image/upload/v1680313818/afghan_udxuke.png"
+                alt="My image">
+    
+                <img src="image/afghan.png" alt="" class="img-fluid">
+            </div>
         </div>
-        <div class="home-img">
-            <img src="https://res.cloudinary.com/dd5s8l3yh/image/upload/v1680313818/afghan_udxuke.png"
-            alt="My image">
-
-            <img src="image/afghan.png" alt="" class="img-fluid">
-        </div>
+       </div>
     </section>
  
     <!-- items -->

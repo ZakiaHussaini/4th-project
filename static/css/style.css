@@ -150,7 +150,9 @@
 .product-inner-box img {
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
-  overflow-x: hidden;
+  height: 100%;
+  width: 100% ;
+  object-fit:cover;
 
 }
 

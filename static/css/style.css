@@ -525,5 +525,6 @@ footer li i, p, hr {
   
   .home {
     overflow-x: hidden;
+    display: inline-block;
   }
 }

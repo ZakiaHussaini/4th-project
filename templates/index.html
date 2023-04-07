@@ -9,11 +9,10 @@
     <!-- home section -->
     <section class="home bg-black-color px-5" id="home">
         <div class="home-text ">
-            <h3 class="text-warning pt-3">New Products</h3>
-            <h1 class="gray-color py-1"> <span class="orange-color">Order online</span> your <br> favorite<span class="orange-color"> clothes</span></h1>
+            <h3 class="text-warning pt-3">Online Marketplace</h3>
+            <h1 class="gray-color py-1"> <span class="orange-color">Buy </span> Online, <br><span class="orange-color"> Sell  </span> Online Afghan women's handicraft!</h1>
             <h6 class="lead gray-color">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam vel cum doloremque natus veritatis corporis itaque necessitatibus ipsam!  </h6>
-            <button class="btn btn-outline-warning btn-custom-color m-1 px-3">Shop Now</button>
-
+            <a href="{% url 'item:items' %}" class="btn btn-outline-warning btn-custom-color m-1 px-3">Shop Now</a>
         </div>
         <div class="home-img">
             <img src="https://res.cloudinary.com/dd5s8l3yh/image/upload/v1680313818/afghan_udxuke.png"
@@ -34,7 +33,7 @@
             <div class="row">
             {% for item in items %}
 
-                <div class="col-md-4 col-sm-6 col-lg-3 mb-3">
+                <div class="col-md-4 col-sm-6 col-lg-3 mb-5">
                     <div class="product-box">
                         <div class="product-inner-box position-relative">
                             <a href="{% url 'item:detail' item.id %}">

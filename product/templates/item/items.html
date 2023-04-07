@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Items
+{% endblock title %}
+
+
+{% block content %}
+
+
+  <div class="container-fluid  bg-black-color" id="browse">
+    <section class="category">
+        <div class="row p-rel">
+            <div class="col-lg-3">
+                <div class="p-fix">
+                    <aside class=" side-area product-side side-shadow mt-5">
+                        <form method="get" action="{% url 'item:items' %}" class="form mb-3">
+                            <div class="input-group">
+                                <input type="text" name="query" value= "{{ query }}" class="form-control text-bg-dark btn-custom-color bg-black-color light-placeholder" placeholder="search">
+                                <button class="btn btn-custom-color" type="button" id="button-addon2">Search</button>
+                              </div>
+                          
+                        </form>
+                       
+                        <div class="side-title">
+                            <h3>Categories</h3>
+                        </div>
+                        <div class="side-content">
+                            <ul class="list">
+                                {% for category in categories %}
+                                <li >
+                                    <a class="gray-color" href="{% url 'item:items' %}?query{{ query }}&category={{ category.id }} "> <h6>{{ category.name }}</h6></a>
+                                </li>
+
+                                {% endfor %}
+
+                            </ul>
+                        </div>
+                    </aside>
+                    <div class="d-flex">
+                        <h6 class="gray-color mt-1 mx-1">Clear Filter</h6>
+                        <ul>
+                            <li>
+                                <a href="{% url 'item:items' %}"><button class="btn btn-outline-success mx-1 my-5 btn-custom-color" >Clear</button>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-9 mt-5">
+                <div class="row ">
+                    {% for item in items %}
+
+                    <div class="col-sm-6 col-lg-4 mb-3">
+                        <div class="product-box">
+                            <div class="product-inner-box position-relative">
+                                <a href="{% url 'item:detail' item.id %}">
+                                    <div class="product-img">
+                                        <div class="product-img-slider">
+                                            <img src="{{ item.image.url }}" alt="dress" class="img-fluid">
+                                            <img src="{{ item.rear_image.url }}" alt="dress" class="img-fluid">
+            
+                                        </div>
+                                    </div>
+                                    <div class="product-info">
+                                        <div class="product-name mx-auto">
+                                            <h3>{{ item.name }}</h3>
+                                        </div>
+                                        <div class="product-price">
+                                            <span>$ {{ item.price }}</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+    
+    

@@ -1,17 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ title }} {% endblock title %}
-
+{% block title %} New Conversation {% endblock title %}
 
 {% block content %}
-<div class="fluid-container mt-0 bg-black-color " id="new">
-    <div class="form-content py-3">
-        <h3 class="p-4 text-center orange-color">{{ title }}</h3>
 
-        <form action="." method="post" class="new-item-form " enctype="multipart/form-data">
+<div class="fluid-container mt-0 bg-black-color" id="new">
+    <div class="form-content py-3">
+        <h3 class="orange-color my-3">New Conversation</h3>
+
+        <form action="." method="post" class="new-conv-form" >
             {% csrf_token %}
             {{ form.as_p }}
-           
               {% if form.errors or form.non_field_errors %}
               <div class="form-control mb-2">
                 {% for field in form %}
@@ -19,17 +18,13 @@
                 {% endfor %}
               </div>
             {% endif %}
-
               <div class="d-grid gap-2">
-                <button type="submit" class="btn btn-center  btn-custom-color w-50  " >Submit</button>
+                <button type="submit" class="btn btn-center btn-custom-color w-50" >Send</button>
               </div>
 
         </form>
     </div>
   </div>
-
-
-
 
 
 

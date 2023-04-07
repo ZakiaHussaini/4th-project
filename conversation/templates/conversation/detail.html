@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %} Conversation {% endblock title %}
+
+
+{% block content %}
+
+<div class="container-fluid bg-black-color conversation">
+<h3 class="orange-color pt-5 ">Conversation</h3>
+<hr class="orange-color">
+
+<div class="m-6">
+    {% for message in conversation.messages.all %}
+        <div class="p-2 m-3 msg {% if message.created_by == request.user %} bg-blue-color {% else %} bg-gray-color {% endif %}">
+           <div>
+            <p class="mb-1 f-small dark-gray"><strong>{{message.created_by.username }} </strong> @ {{message.created_at | timesince}} </p>
+            <p class='white-color'>{{ message.content }}</p>
+           </div>
+        </div>
+
+    {% endfor %}
+</div>
+
+<div>
+    <form action="." method="post" class="conversation-form mx-3 ">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit" class="btn btn-custom-color my-3 w-25  " >Send</button>
+    
+    </form>
+</div>
+</div>
+
+{% endblock content %}
+    

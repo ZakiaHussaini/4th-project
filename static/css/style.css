@@ -517,7 +517,7 @@ footer li i, p, hr {
   }
   
 
-@media screen and (max-width: 780px) {
+/* @media screen and (max-width: 780px) {
 
   .home-text h6 {
     display: none;
@@ -527,17 +527,17 @@ footer li i, p, hr {
     overflow-x: hidden;
     display: inline-block;
   }
-}
-
+} */
+/* 
 @media screen and (max-width: 490px) {
   .home-img {
     width: 60%;
     overflow-x: hidden;
     margin: 0 auto;
   }
-}
+} */
 
-@media screen and (min-width: 790) {
+/* @media screen and (min-width: 790) {
   .home {
     height:fit-content;
     display: grid;
@@ -545,4 +545,4 @@ footer li i, p, hr {
     grid-template-columns: repeat(auto-fit, minmax(17rem, auto));
     gap: 1.5rem;
   }
-}
+} */

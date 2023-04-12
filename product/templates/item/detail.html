@@ -29,7 +29,7 @@
 
                   <h5 class="orange-color mt-4">Product Deatails</h5>
                   {% if item.description %}
-                  <span class="gray-color">{{ item.description}}</span>
+                  <span class="gray-color mr-2">{{ item.description}}</span>
                   {% endif %}
                   {% if request.user == item.created_by %} 
                    <a href="{% url 'item:delete' item.id %}" class="btn btn-outline-danger mx-2 my-1 d-inline-block   ">Delete</a>

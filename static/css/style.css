@@ -493,7 +493,12 @@ footer li i, p, hr {
         display: flex;
         flex-direction: column;
     }
+
+    .pro-desc {
+      margin-right: 2rem;
+    }
   
+   
     #pro-detail .single-pro-image {
         width: 100%;
         margin-left: 0 !important;
